@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+    bienvenida();
+    //System.out.println("Bienvenido a mi juego del blackjack! ");
+    boolean repeat = false;  //No se reasigna el valor en cada ronda
+    while (true) {
+        menuPrincipal();
+        Integer menuP = Integer.parseInt(readln());
+        if (repeat == true) {    //A partir del primer juego se limpiara la pantalla al principio de cada ronda
+            cls();
+        }
+        if (menuP == 1) {
+            juego();//Juego principal (blackjack)
+            repeat = true;  //Marca que ya se ha realizado un juego
+        } else if (menuP == 2) {
+            reglas();
+        } else if (menuP == 3) {
+            break;      //Termina el juego
+        } else if (menuP == 69) {
+            editMoney(); //Millonariooooo
+        } else {
+            System.out.println("Has introducido mal la opcion, por favor repita la seleccion.");
+        }
+    }
+    System.out.println("Gracias por jugar :)");
+}
